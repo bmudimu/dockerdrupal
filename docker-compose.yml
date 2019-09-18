@@ -1,13 +1,13 @@
 version: '3'
 services:
   db:
-    image: mariandb:10.2
+    image: mariadb:10.2
     environment:
       MYSQL_DATABASE: drupal
       MYSQL_ROOT_PASSWORD: Br1anMud1mu
     volumes:
       - db_data:/var/lib/mysql
-      restart: always
+    restart: always
   drupal:
     depends_on:
       - db
